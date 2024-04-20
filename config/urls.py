@@ -18,7 +18,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-urlpatterns = [
-    path("admin/", admin.site.urls),
+urlpatterns:list = [
+    # TailwindCSS
+    path(route="__reload__/", view=include(arg="django_browser_reload.urls")),
+
+    path(route="admin/", view=admin.site.urls),
     path(route="", view=include(arg="links.urls"))
 ]

@@ -39,6 +39,15 @@ INSTALLED_APPS:list[str] = [
     "django.contrib.staticfiles",
     # Django Apps
     "links",
+
+    # Tailwind Setup
+    "tailwind",
+]
+
+TAILWIND_APP_NAME = "links"
+
+INTERNAL_IPS = [
+    "127.0.0.1",
 ]
 
 MIDDLEWARE = [
@@ -49,6 +58,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # TailwindCSS
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"

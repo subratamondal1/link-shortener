@@ -1,0 +1,16 @@
+{% extends "links/base.html" %}
+
+{% block content %}
+    <div>
+    {% if links %}
+        {% for link in links  %}
+            <h2> {{link.name}} </h2>
+            <a href="{{link.url}}">{{link.url}}</a>
+            <p> {{link.slug}} </p>
+            <p>Clicks: {{link.clicks}}</p>
+        {% endfor %}
+    {% else %}
+        <p>No links. Add yours one.</p>
+    {% endif %}
+    </div>
+{% endblock  %}
